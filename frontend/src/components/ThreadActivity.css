@@ -1,0 +1,83 @@
+.thread-activity-container {
+  background-color: #1a1a1a;
+  border: 1px solid #333333;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.05);
+  margin-bottom: 30px;
+}
+
+.thread-activity-container h3 {
+  font-size: 1.3rem;
+  color: #ffffff;
+  margin-bottom: 15px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.thread-activity-list {
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.thread-activity-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.thread-activity-list::-webkit-scrollbar-track {
+  background: #000000;
+  border-radius: 3px;
+}
+
+.thread-activity-list::-webkit-scrollbar-thumb {
+  background: #333333;
+  border-radius: 3px;
+}
+
+.thread-activity-list::-webkit-scrollbar-thumb:hover {
+  background: #444444;
+}
+
+.thread-activity-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  background-color: #0a0a0a;
+  border: 1px solid #222222;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.thread-activity-item:hover {
+  background-color: #151515;
+  border-color: #333333;
+}
+
+.thread-name {
+  font-family: 'Courier New', monospace;
+  color: #888888;
+  font-size: 0.85rem;
+  flex: 1;
+}
+
+.activity-type {
+  color: #cccccc;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+.activity-amount {
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.no-activity {
+  text-align: center;
+  padding: 30px;
+  color: #555555;
+  font-style: italic;
+}

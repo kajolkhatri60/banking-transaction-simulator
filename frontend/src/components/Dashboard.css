@@ -1,0 +1,115 @@
+.dashboard {
+  min-height: 100vh;
+  background-color: #000000;
+  padding: 20px;
+}
+
+.dashboard-header {
+  text-align: center;
+  padding: 30px 20px;
+  border-bottom: 1px solid #333333;
+  margin-bottom: 30px;
+}
+
+.dashboard-header h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+.subtitle {
+  font-size: 1rem;
+  color: #888888;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+
+.dashboard-content {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.balance-card {
+  background-color: #1a1a1a;
+  border: 1px solid #333333;
+  border-radius: 8px;
+  padding: 30px;
+  text-align: center;
+  margin-bottom: 30px;
+  box-shadow: 0 2px 8px rgba(255, 255, 255, 0.05);
+}
+
+.balance-card h2 {
+  font-size: 1.2rem;
+  color: #888888;
+  margin-bottom: 15px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.balance-amount {
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+
+.transaction-forms {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.simulate-section {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.btn-simulate {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  padding: 15px 40px;
+  font-size: 1rem;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.btn-simulate:hover:not(:disabled) {
+  background-color: #ffffff;
+  color: #000000;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+}
+
+.btn-simulate:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+@media (max-width: 1024px) {
+  .transaction-forms {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-header h1 {
+    font-size: 2rem;
+  }
+  
+  .balance-amount {
+    font-size: 2.5rem;
+  }
+}

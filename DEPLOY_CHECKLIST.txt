@@ -1,0 +1,182 @@
+═══════════════════════════════════════════════════════════
+    BANKING TRANSACTION SIMULATOR - DEPLOYMENT CHECKLIST
+═══════════════════════════════════════════════════════════
+
+📋 PRE-DEPLOYMENT
+═══════════════════════════════════════════════════════════
+[ ] App works locally (backend + frontend)
+[ ] GitHub account created
+[ ] Railway account created (railway.app)
+[ ] Vercel account created (vercel.com)
+[ ] Git installed on computer
+
+═══════════════════════════════════════════════════════════
+📦 STEP 1: PUSH TO GITHUB
+═══════════════════════════════════════════════════════════
+[ ] cd banking-transaction-simulator
+[ ] git init
+[ ] git add .
+[ ] git commit -m "Ready for deployment"
+[ ] Create repo on GitHub
+[ ] git remote add origin [YOUR_REPO_URL]
+[ ] git push -u origin main
+
+═══════════════════════════════════════════════════════════
+🚂 STEP 2: DEPLOY BACKEND (RAILWAY)
+═══════════════════════════════════════════════════════════
+[ ] Go to railway.app
+[ ] Login with GitHub
+[ ] Click "New Project"
+[ ] Select "Deploy from GitHub repo"
+[ ] Choose your repository
+[ ] Set root directory: backend
+[ ] Wait for build to complete
+[ ] Go to Settings → Networking
+[ ] Click "Generate Domain"
+[ ] Copy backend URL: _______________________________
+
+═══════════════════════════════════════════════════════════
+🔧 STEP 3: UPDATE FRONTEND CONFIG
+═══════════════════════════════════════════════════════════
+[ ] Edit: frontend/.env.production
+[ ] Set: VITE_API_URL=[YOUR_RAILWAY_URL]/api
+[ ] git add .
+[ ] git commit -m "Update API URL"
+[ ] git push
+
+═══════════════════════════════════════════════════════════
+▲ STEP 4: DEPLOY FRONTEND (VERCEL)
+═══════════════════════════════════════════════════════════
+
+Option A: Using Vercel CLI
+[ ] cd frontend
+[ ] npm install -g vercel
+[ ] vercel
+[ ] Follow prompts
+[ ] vercel --prod
+[ ] Copy frontend URL: _______________________________
+
+Option B: Using Vercel Dashboard
+[ ] Go to vercel.com/new
+[ ] Import GitHub repository
+[ ] Set root directory: frontend
+[ ] Set framework: Vite
+[ ] Add environment variable:
+    Key: VITE_API_URL
+    Value: [YOUR_RAILWAY_URL]/api
+[ ] Click Deploy
+[ ] Copy frontend URL: _______________________________
+
+═══════════════════════════════════════════════════════════
+🔐 STEP 5: UPDATE CORS
+═══════════════════════════════════════════════════════════
+[ ] Edit: backend/.../TransactionController.java
+[ ] Update @CrossOrigin to include your Vercel URL
+[ ] git add .
+[ ] git commit -m "Update CORS"
+[ ] git push
+[ ] Wait for Railway to redeploy
+
+═══════════════════════════════════════════════════════════
+✅ STEP 6: TEST DEPLOYMENT
+═══════════════════════════════════════════════════════════
+[ ] Open frontend URL in browser
+[ ] Check if balance loads (₹5000)
+[ ] Test deposit transaction
+[ ] Test withdraw transaction
+[ ] Test transfer transaction
+[ ] Click "Simulate 20 Concurrent Transactions"
+[ ] Check thread activity section
+[ ] Verify transaction table updates
+[ ] Open browser console (F12) - no errors?
+[ ] Test on mobile device
+
+═══════════════════════════════════════════════════════════
+🎉 POST-DEPLOYMENT
+═══════════════════════════════════════════════════════════
+[ ] Save your URLs:
+    Frontend: _______________________________
+    Backend:  _______________________________
+    GitHub:   _______________________________
+
+[ ] Share with others
+[ ] Monitor Railway dashboard
+[ ] Monitor Vercel dashboard
+[ ] Check performance metrics
+
+═══════════════════════════════════════════════════════════
+📊 MONITORING
+═══════════════════════════════════════════════════════════
+Railway Dashboard:
+[ ] Check deployment logs
+[ ] Monitor CPU/Memory usage
+[ ] Verify no errors
+
+Vercel Dashboard:
+[ ] Check build status
+[ ] View analytics
+[ ] Monitor performance
+
+═══════════════════════════════════════════════════════════
+🐛 TROUBLESHOOTING
+═══════════════════════════════════════════════════════════
+
+Problem: CORS Error
+[ ] Check @CrossOrigin includes Vercel URL
+[ ] Verify URL format (no trailing slash)
+[ ] Redeploy backend
+
+Problem: API Calls Fail
+[ ] Check VITE_API_URL in Vercel
+[ ] Verify backend is running
+[ ] Check Railway logs
+
+Problem: Backend Won't Start
+[ ] Check Railway logs
+[ ] Verify Java version (17+)
+[ ] Check build command
+
+Problem: Frontend Build Fails
+[ ] Verify root directory: frontend
+[ ] Check package.json exists
+[ ] Verify build command: npm run build
+
+═══════════════════════════════════════════════════════════
+📚 DOCUMENTATION REFERENCE
+═══════════════════════════════════════════════════════════
+Quick Start:     QUICK_DEPLOY.md
+Detailed Guide:  DEPLOYMENT_GUIDE.md
+Architecture:    DEPLOYMENT_ARCHITECTURE.md
+Summary:         DEPLOYMENT_SUMMARY.md
+
+═══════════════════════════════════════════════════════════
+💰 COST TRACKING
+═══════════════════════════════════════════════════════════
+Vercel:  $0/month (free tier)
+Railway: $0/month (with $5 credit)
+Total:   FREE
+
+═══════════════════════════════════════════════════════════
+🎯 SUCCESS CRITERIA
+═══════════════════════════════════════════════════════════
+[ ] Frontend loads without errors
+[ ] Backend responds to API calls
+[ ] All transactions work
+[ ] Simulation works
+[ ] Thread activity displays
+[ ] No CORS errors
+[ ] Mobile responsive
+[ ] Performance acceptable
+
+═══════════════════════════════════════════════════════════
+
+✨ DEPLOYMENT COMPLETE! ✨
+
+Your Banking Transaction Simulator is now live and accessible
+worldwide!
+
+Share your app:
+Frontend: https://your-app.vercel.app
+Backend:  https://your-app.railway.app/api
+
+═══════════════════════════════════════════════════════════
